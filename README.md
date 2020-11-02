@@ -9,24 +9,24 @@
 | last_name_furigana  | string  | null: false |
 | first_name_furigana | string  | null: false |
 | nickname            | string  | null: false |
-| birthday            | integer | null: false |
+| birthday            | date    | null: false |
 
 - has_many :items
 - has_many :purchases
 
 ## itemsテーブル
 
-| Column        | Type       | Options     |
-| -----------   | ---------- | ----------- |
-| title         | string     | null: false |
-| category      | string     | null: false |
-| status        | string     | null: false |
-| catch_copy    | text       | null: false |
-| price         | integer    | null: false |
-| delivery_fee  | string     | null: false |
-| area          | string     | null: false |
-| days          | string     | null: false |
-| user          | references | null: false |
+| Column        | Type       | Options          |
+| -----------   | ---------- | ---------------- |
+| title         | string     | null: false      |
+| category      | integer    | null: false      |
+| status        | integer    | null: false      |
+| catch_copy    | text       | null: false      |
+| price         | integer    | null: false      |
+| delivery_fee  | integer    | null: false      |
+| area          | integer    | null: false      |
+| days          | integer    | null: false      |
+| user          | references | foreign_key: true|
 
 - belongs_to :user
 - has_one :purchases
@@ -37,22 +37,21 @@
 | ----------- | ---------- | ----------------- |
 | user        | references | foreign_key: true |
 | item        | references | foreign_key: true |
-| address     | references |                   |
 
 - belongs_to :user
-- has_one :item
+- belongs_to :item
 - has_one :addresses
 
 ## addressesテーブル
 
-| Column        | Type       | Options     |
-| -----------   | ---------- | ----------- |
-| postal_code   | string     | null: false |
-| prefectures   | string     | null: false |
-| municipality  | string     | null: false |
-| address       | string     | null: false |
-| building_name | string     |             |
-| phone_number  | integer    | null: false |
-| prototype     | references |             |
+| Column        | Type       | Options           |
+| -----------   | ---------- | ----------------- |
+| postal_code   | string     | null: false       |
+| prefectures   | integer    | null: false       |
+| municipality  | string     | null: false       |
+| address       | string     | null: false       |
+| building_name | string     |                   |
+| phone_number  | string     | null: false       |
+| purchases     | references | foreign_key: true |
 
 - belongs_to :purchases
