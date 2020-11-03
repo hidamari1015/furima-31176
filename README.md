@@ -52,6 +52,6 @@
 | address        | string     | null: false       |
 | building_name  | string     |                   |
 | phone_number   | string     | null: false       |
-| purchases      | references | foreign_key: true |
+| purchase       | references | foreign_key: true |
 
-- belongs_to :purchases
+- belongs_to :purchase
