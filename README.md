@@ -24,7 +24,7 @@
 | catch_copy      | text       | null: false      |
 | price           | integer    | null: false      |
 | delivery_fee_id | integer    | null: false      |
-| area_id         | integer    | null: false      |
+| prefectures_id  | integer    | null: false      |
 | days_id         | integer    | null: false      |
 | user            | references | foreign_key: true|
 
