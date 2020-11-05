@@ -3,18 +3,18 @@ class Item < ApplicationRecord
   belongs_to :category
   belongs_to :status
   belongs_to :delivery_fee
-  belongs_to :prefectures
+  belongs_to :prefecture
   belongs_to :day
 
   with_options presence: true do
     validates :title
-    validates :category_id
-    validates :status_id
+    validates :category_id, numericality: { other_than: 1 } 
+    validates :status_id, numericality: { other_than: 1 } 
     validates :catch_copy
     validates :price
-    validates :delivery_fee_id
-    validates :prefectures_id
-    validates :day_id
+    validates :delivery_fee_id, numericality: { other_than: 1 } 
+    validates :prefectures_id, numericality: { other_than: 1 } 
+    validates :day_id, numericality: { other_than: 1 } 
   end
 
   validates :price, numericality: { only_integer: true, greater_than: 299, less_than: 10000000 }
