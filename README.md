@@ -25,7 +25,7 @@
 | price           | integer    | null: false      |
 | delivery_fee_id | integer    | null: false      |
 | prefectures_id  | integer    | null: false      |
-| days_id         | integer    | null: false      |
+| day_id          | integer    | null: false      |
 | user            | references | foreign_key: true|
 
 - belongs_to :user
