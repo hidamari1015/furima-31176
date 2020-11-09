@@ -23,6 +23,3 @@ class Item < ApplicationRecord
   validates :price, numericality: { only_integer: true, greater_than: 299, less_than: 10_000_000 }
   validates :price, format: { with: /\A[0-9]+\z/ }
 end
-
-
-
