@@ -16,7 +16,7 @@ class Item < ApplicationRecord
     validates :catch_copy
     validates :price
     validates :delivery_fee_id, numericality: { other_than: 1 }
-    validates :prefectures_id, numericality: { other_than: 1 }
+    validates :prefecture_id, numericality: { other_than: 1 }
     validates :day_id, numericality: { other_than: 1 }
   end
 
