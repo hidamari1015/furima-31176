@@ -6,6 +6,16 @@ RSpec.describe UserOrder, type: :model do
       @order = FactoryBot.build(:user_order)
     end
 
+
+      it '全ての値が正しく入力されていれば保存ができること' do
+        expect(@order).to be_valid
+      end
+
+      it 'building_nameが空でも登録できる' do
+        @order.building_name = nil 
+        expect(@order).to be_valid
+      end
+
       it 'tokenが空だと登録できない' do
         @order.token = nil
         @order.valid?
